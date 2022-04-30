@@ -1,6 +1,6 @@
 start : func+
 
-?expr : "se" op ", então" op ", mas se não for" expr -> cond
+?expr : "se" op ", então" op ", senão" expr -> cond
       | op
 
 ?op   : bit_or

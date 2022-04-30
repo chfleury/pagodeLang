@@ -1,11 +1,11 @@
-main(op, x, y) = 
-    if op = 0 then
-        x + y
-    else if op = 1 then
-        x * y
-    else if op = 2 then
-        x - y
-    else if op = 3 then
-        x / y
-    else 
-        0      
+Ela é maneira, burguesa, linda demais,
+    se maneira como 0 , então
+        burguesa junto com linda
+    , senão se maneira como 1 , então
+        burguesa vezes linda
+    , senão se maneira como 2 , então
+        burguesa sem linda
+    , senão se maneira como 3 , então
+        burguesa dividido por linda
+    , senão
+        0
