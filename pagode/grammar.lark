@@ -1,0 +1,45 @@
+start : func+
+
+?expr : "if" op "then" op "else" expr -> cond
+      | op
+
+?op   : bit_or
+
+?bit_or  : bit_or "|" bit_and 
+         | bit_and
+
+?bit_and : bit_and "&" cmp 
+         | cmp
+
+?cmp   : arith "<" arith  -> lt
+       | arith ">" arith  -> gt
+       | arith "=" arith  -> eq
+       | arith
+
+?arith : arith "+" term  -> add
+       | arith "-" term  -> sub
+       | term
+
+?term  : term "*" value  -> mul
+       | term "/" value  -> div
+       | value
+
+?value : NAME
+       | INT
+       | call
+       | "(" expr ")"
+ 
+call  : NAME "(" args ")"
+
+args  : expr ("," expr)*
+
+// double(x) = x + x
+// add(x y) = x + y
+func  : NAME "(" argn ")" "=" expr
+argn  : NAME ("," NAME)*
+
+NAME  : /(?!\d)\w+/ 
+INT   : /\d+/
+OP    : /[-+*\/<>=&|]/
+%ignore /\s+/
+%ignore /;[^\n]*/
