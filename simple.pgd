@@ -1,11 +1,6 @@
-Ela é maneira, burguesa, linda demais,
-    se maneira como 0 , então
-        burguesa junto com linda
-    , senão se maneira como 1 , então
-        burguesa vezes linda
-    , senão se maneira como 2 , então
-        burguesa sem linda
-    , senão se maneira como 3 , então
-        burguesa dividido por linda
-    , senão
-        0
+Ela é Maneira, Burguesa, Linda demais!
+se Maneira como nenhum , então
+Burguesa e Linda, senão se Maneira como eu , então
+Burguesa vezes Linda, senão se Maneira como uma capivara , então
+Burguesa sem Linda, senão se Maneira como uma cantora famosa , então
+Burguesa dividido por Linda, senão nenhum
