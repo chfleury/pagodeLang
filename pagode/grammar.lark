@@ -1,45 +1,45 @@
 start : func+
 
-?expr : "if" op "then" op "else" expr -> cond
+?expr : "se" op ", então" op ", mas se não for" expr -> cond
       | op
 
 ?op   : bit_or
 
-?bit_or  : bit_or "|" bit_and 
+?bit_or  : bit_or "|" bit_and
          | bit_and
 
-?bit_and : bit_and "&" cmp 
+?bit_and : bit_and "&" cmp
          | cmp
 
-?cmp   : arith "<" arith  -> lt
-       | arith ">" arith  -> gt
-       | arith "=" arith  -> eq
+?cmp   : arith "menor que" arith  -> lt
+       | arith "maior que" arith  -> gt
+       | arith "como" arith  -> eq
        | arith
 
-?arith : arith "+" term  -> add
-       | arith "-" term  -> sub
+?arith : arith "junto com" term  -> add
+       | arith "sem" term  -> sub
        | term
 
-?term  : term "*" value  -> mul
-       | term "/" value  -> div
+?term  : term "vezes" value  -> mul
+       | term "dividido por" value  -> div
        | value
 
 ?value : NAME
        | INT
        | call
        | "(" expr ")"
- 
+
 call  : NAME "(" args ")"
 
 args  : expr ("," expr)*
 
 // double(x) = x + x
 // add(x y) = x + y
-func  : NAME "(" argn ")" "=" expr
+func  : NAME "é" argn  "igual" expr
 argn  : NAME ("," NAME)*
 
-NAME  : /(?!\d)\w+/ 
+NAME  : /(?!\d)\w+/
 INT   : /\d+/
 OP    : /[-+*\/<>=&|]/
 %ignore /\s+/
-%ignore /;[^\n]*/
+%ignore /Comentei[^\n]*/
