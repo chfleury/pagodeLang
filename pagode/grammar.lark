@@ -29,7 +29,7 @@ start : func+
        | call
        | "(" expr ")"
 
-call  : NAME "(" args ")"
+call  : NAME "é uma" args "!"
 
 args  : expr ("," expr)*
 
