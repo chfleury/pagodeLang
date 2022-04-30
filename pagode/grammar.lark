@@ -33,13 +33,11 @@ call  : NAME "(" args ")"
 
 args  : expr ("," expr)*
 
-// double(x) = x + x
-// add(x y) = x + y
 func  : NAME "é" argn  "demais," expr
 argn  : NAME ("," NAME)*
 
-NAME  : /(?!\d)\w+/
-INT   : /\d+/
+NAME  : /(?!\d)[A-Z]\w+/
+INT   : /[\w\s]+/
 OP    : /[-+*\/<>=&|]/
 %ignore /\s+/
 %ignore /Comentei[^\n]*/

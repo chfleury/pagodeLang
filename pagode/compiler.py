@@ -89,10 +89,15 @@ def mk_operator(op):
 @v_args(inline=True)
 class IRTransformer(Transformer):
     def NAME(self, tk):
+        print(tk)
         return str(tk)
 
     def INT(self, tk):
-        return int(tk)
+        s = list(filter(None, tk.value.split(' ')))
+
+        if s[0] == 'nenhum':
+            return 0
+        return len(s)
 
     def OP(self, tk):
         return str(tk)
