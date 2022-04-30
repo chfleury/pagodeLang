@@ -35,7 +35,7 @@ args  : expr ("," expr)*
 
 // double(x) = x + x
 // add(x y) = x + y
-func  : NAME "é" argn  "igual" expr
+func  : NAME "é" argn  "demais," expr
 argn  : NAME ("," NAME)*
 
 NAME  : /(?!\d)\w+/

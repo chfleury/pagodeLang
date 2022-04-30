@@ -37,11 +37,11 @@ def interpret(ir, env):
 
     main_args = None
     for fname, (args, body) in ir.items():
-        if fname == "main":
+        if fname == "Ela":
             main_args = [int(input(f"{arg}: ")) for arg in args]
         env[fname] = make_function(args, body, env)
 
-    print("\n=>", env["main"](*main_args))
+    print("\n=>", env["Ela"](*main_args))
 
 
 def parse(src: str) -> AST:
