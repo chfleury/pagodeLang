@@ -14,6 +14,13 @@ Fulana é uma Gatinha sem igual! e Fulana é uma Gatinha sem por defeito!
 ```
 
 
+## Como usar
+Primeiro instale as bibliotecas que estão no requirements.txt (lark-parser e click)
+Depois basta entrar na pasta raiz e rodar o seguinte comando:
+```python -m pagode fib.pgd```
+Onde fib.pgd pode ser trocado por qualquer outro arquivo .pgd
+Após isso basta informar os inputs!
+
 ## Gramática
 ```
 start : func+
@@ -66,6 +73,7 @@ OP    : /[-+*\/<>=&|]/
 
 ## Explicação
 
+A função principal, que é executada ao rodar o arquivo é a função "Ela"
 NAMEs são palávras que começãm com letra maíscula, e INTs são representados por um conjunto de palavras com letra minúscula, onde o valor do inteiro será a quantidade de palvras.
 Ex: isso seria um inteiro = 4 palavras, então representa o número 4
 Para representar o zero usamos a palavra reservada "nenhum"
