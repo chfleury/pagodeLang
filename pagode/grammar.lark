@@ -16,7 +16,7 @@ start : func+
        | arith "como" arith  -> eq
        | arith
 
-?arith : arith "junto com" term  -> add
+?arith : arith "e" term  -> add
        | arith "sem" term  -> sub
        | term
 
