@@ -11,8 +11,8 @@ start : func+
 ?bit_and : bit_and "&" cmp
          | cmp
 
-?cmp   : arith "menor que" arith  -> lt
-       | arith "maior que" arith  -> gt
+?cmp   : arith "me ama menos que" arith  -> lt
+       | arith "me ama mais que" arith  -> gt
        | arith "como" arith  -> eq
        | arith
 
@@ -33,11 +33,13 @@ call  : NAME "(" args ")"
 
 args  : expr ("," expr)*
 
-func  : NAME "é" argn  "demais," expr
+func  : NAME "é" argn  "demais!" expr
 argn  : NAME ("," NAME)*
 
+
+%ignore /\n/
 NAME  : /(?!\d)[A-Z]\w+/
-INT   : /[\w\s]+/
+INT   : /[^\n][\w\s]+/
 OP    : /[-+*\/<>=&|]/
 %ignore /\s+/
 %ignore /Comentei[^\n]*/
