@@ -62,7 +62,6 @@ func  : NAME "é" argn  "demais!" expr
 argn  : NAME ("," NAME)*
 
 
-%ignore /\n/
 NAME  : /(?!\d)[A-Z]\w+/
 INT   : /[^\n][\w\s]+/
 OP    : /[-+*\/<>=&|]/
