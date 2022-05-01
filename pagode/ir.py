@@ -1,9 +1,6 @@
-from lark import Lark, Tree, Transformer, v_args
-from pathlib import Path
+from lark import  Tree, Transformer, v_args
 from typing import Dict, List, Tuple, Union
-import operator as op
 
-AST = Tree
 SExpr = Union[List, str, int]
 FuncDef = Tuple[Tuple[str], SExpr]
 IR = Dict[str, FuncDef]
