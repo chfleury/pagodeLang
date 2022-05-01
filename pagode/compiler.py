@@ -3,6 +3,7 @@ from pathlib import Path
 from typing import Dict, List, Tuple, Union
 import operator as op
 from .ir import internal_representation
+from .eval import eval_expr, make_function
 
 AST = Tree
 SExpr = Union[List, str, int]
@@ -47,34 +48,6 @@ def parse(src: str) -> AST:
 
 
 
-
-def eval_expr(sexpr: SExpr, env: dict):
-    if isinstance(sexpr, int):
-        return sexpr
-    elif isinstance(sexpr, str):
-        return env[sexpr]
-
-    head, *args = sexpr
-    if head == "if":
-        cond, then, other = args
-        if eval_expr(cond, env):
-            return eval_expr(then, env)
-        else:
-            return eval_expr(other, env)
-
-    fn = env[head]
-    argvalues = [eval_expr(arg, env) for arg in args]
-    return fn(*argvalues)
-
-
-def make_function(argnames, body, env):
-    def fn(*argvalues):
-        local_env = env.copy()
-        for name, value in zip(argnames, argvalues):
-            local_env[name] = value
-        return eval_expr(body, local_env)
-
-    return fn
 
 
 
