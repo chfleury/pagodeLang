@@ -1,4 +1,4 @@
-from lark import Lark, Tree, Transformer, v_args
+from lark import Lark, Tree
 from pathlib import Path
 from typing import Dict, List, Tuple, Union
 import operator as op
@@ -6,8 +6,6 @@ from .ir import internal_representation
 
 AST = Tree
 SExpr = Union[List, str, int]
-FuncDef = Tuple[Tuple[str], SExpr]
-IR = Dict[str, FuncDef]
 
 GRAMMAR_PATH = Path(__file__).parent / "grammar.lark"
 GRAMMAR_SRC = GRAMMAR_PATH.read_text()
