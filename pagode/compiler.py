@@ -92,15 +92,12 @@ class IRTransformer(Transformer):
         return str(tk)
 
     def INT(self, tk):
-        s = []
         y = list(filter(None, tk.value.split(' ')))
-        for i in y:
-            if i != '\n':
-                s.append(i)
+        print(y)
 
-        if s[0] == 'nenhum':
+        if y[0] == 'nenhum':
             return 0
-        return len(s)
+        return len(y)
 
     def OP(self, tk):
         return str(tk)
