@@ -6,9 +6,9 @@ Essa é a PagodeLang, a linguagem inspirada na linguagem Panic! Onde você pode 
 ## Exemplo de uma calculadora da sequência de Fibonacci em PagodeLang
 
 ```
-Ela é Perfeita demais! Fulana é uma Perfeita!
+Ela é Perfeita! Fulana é uma Perfeita!
 Comentei dela com meus amigos
-Fulana é Gatinha demais!
+Fulana é Gatinha!
 se Gatinha me ama menos que eu amo ela , então tchau, senão
 Fulana é uma Gatinha sem igual! e Fulana é uma Gatinha sem por defeito!
 ```
