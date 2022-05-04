@@ -33,7 +33,7 @@ call  : NAME "é uma" args "!"
 
 args  : expr ("," expr)*
 
-func  : NAME "é" argn  "demais!" expr
+func  : NAME "é" argn "!" expr
 argn  : NAME ("," NAME)*
 
 
